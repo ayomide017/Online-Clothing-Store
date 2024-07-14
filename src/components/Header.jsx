@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart , faSearch, faHamburger} from '@fortawesome/free-solid-svg-icons';
+import { useCartStore } from "../store/cart";
 
 import data from "../data.json";
 // import { FaSearch, FaHamburger } from "react-icons/fa";
 const {header} = data;
 
 export const Header =()=>{
+    const {cartItems} = useCartStore()
  return(
     <header className="header">
        <div className="container">
@@ -36,9 +38,9 @@ export const Header =()=>{
            <button> <FontAwesomeIcon icon={faSearch} /></button>
         </form>
         <FontAwesomeIcon className="header__toggle" icon={faHamburger} />
-        <Link to={header.cart.url} className="cart-content">
+        <Link to="/shopping" className="cart-content">
           <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
-          <span className="cart-no">0</span>
+          <span className="cart-no">{cartItems?.length}</span>
         </Link>
       </div>
 
