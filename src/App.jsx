@@ -10,7 +10,8 @@ import { Home } from './pages/Home/Home';
 import {Cart} from "./pages/Cart";
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { ShoppingCart } from './pages/ShoppingCart';
+import { ShoppingCart } from './pages/ShoppingCart.jsx/ShoppingCart';
+import { Payment } from './pages/Payment/Payment';
 
 
 
@@ -71,6 +72,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/cart' element={<Cart/>}>  </Route>
         <Route path="/shopping" element={<ShoppingCart/>}/>
+        <Route path='/payment' element={<Payment/>} />
       </Routes>
 
     </main>

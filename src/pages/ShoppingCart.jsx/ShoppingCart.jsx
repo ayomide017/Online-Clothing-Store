@@ -1,10 +1,12 @@
 import React from "react"
 
 import {FaPlus, FaMinus, FaTimes} from "react-icons/fa";
-import img1 from "../assets/sm-img.png";
-import img2 from "../assets/sm1-img.png"
-import { Button } from "../components/Button";
-import { useCartStore } from "../store/cart";
+// import img1 from "../assets/sm-img.png";
+// import img2 from "../assets/sm1-img.png"
+import { Button } from "../../components/Button";
+import { useCartStore } from "../../store/cart";
+import { Link } from "react-router-dom";
+import "./ShoppingCart.css"
 
 export const ShoppingCart =()=>{
     const {cartItems, updateCartItem, removeCartItem} = useCartStore()
@@ -98,7 +100,9 @@ export const ShoppingCart =()=>{
     </div>
     <div class="checkout-container">
         {/* <button class="checkout-btn">Checkout</button> */}
-        <Button text="Proceed to Checkout" className="btn-bg"/>
+        <Link to="/payment">
+        <Button  text="Proceed to Checkout" className="btn-bg"/>
+        </Link>
         <Button text="Countinue shopping" className="btn-br"/>
     </div>
     </div>
